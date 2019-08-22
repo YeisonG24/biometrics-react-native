@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import com.biometricsreactnative.BuildConfig;
 import com.biometricsreactnative.R;
 
+// react-native-biometrics
+import com.rnbiometrics.ReactNativeBiometricsPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-reanimated
@@ -52,6 +54,7 @@ public class PackageList {
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(),
+      new ReactNativeBiometricsPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
       new FingerprintAuthPackage()

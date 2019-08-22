@@ -372,6 +372,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color hint_color
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -400,6 +401,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color success_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -408,6 +410,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color warning_color
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -606,6 +609,8 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable ic_fingerprint_error
+drawable ic_fingerprint_success
 drawable ic_fp_40px
 drawable notification_action_background
 drawable notification_bg
@@ -692,6 +697,7 @@ id fingerprint_description
 id fingerprint_error
 id fingerprint_icon
 id fingerprint_sensor_description
+id fingerprint_status
 id fitBottomStart
 id fitCenter
 id fitEnd
@@ -835,6 +841,8 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout dev_loading_view
 layout fingerprint_dialog
+layout fingerprint_dialog_container
+layout fingerprint_dialog_content
 layout fps_view
 layout notification_action
 layout notification_action_tombstone
@@ -917,6 +925,11 @@ string catalyst_report_button
 string catalyst_settings
 string catalyst_settings_title
 string combobox_description
+string fingerprint_cancel
+string fingerprint_hint
+string fingerprint_message
+string fingerprint_not_recognized
+string fingerprint_recognized
 string header_description
 string image_description
 string imagebutton_description
@@ -1103,6 +1116,7 @@ style Base_Widget_AppCompat_Spinner_Underlined
 style Base_Widget_AppCompat_TextView_SpinnerItem
 style Base_Widget_AppCompat_Toolbar
 style Base_Widget_AppCompat_Toolbar_Button_Navigation
+style BiometricsDialog
 style CalendarDatePickerDialog
 style CalendarDatePickerStyle
 style ClockTimePickerDialog

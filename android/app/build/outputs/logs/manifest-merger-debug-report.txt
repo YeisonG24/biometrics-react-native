@@ -5,13 +5,14 @@ INJECTED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/ma
 INJECTED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml:1:1-27:12
 INJECTED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml:1:1-27:12
 MERGED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml:1:1-27:12
+MERGED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
 MERGED from [:react-native-touch-id] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-touch-id/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-gesture-handler] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.60.5] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/b2cf402a219ddd2d9d55c519eba34785/AndroidManifest.xml:2:1-13:12
 MERGED from [org.webkit:android-jsc:r245459] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/5ccaff79c223ca792b58fcb2781a257a/AndroidManifest.xml:2:1-11:12
-MERGED from [androidx.transition:transition:1.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/f5ba31f2b41d4b2f11408513d9b142e9/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/b30fa0bdc79112764d0f53737cf137b6/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/f5ba31f2b41d4b2f11408513d9b142e9/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/36b3243dae87ee92251d0d56cffc6dee/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/88ffaae1ade52519735762528449f963/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/3fbc5949bd14767cde4d4296c3c4c7d1/AndroidManifest.xml:2:1-9:12
@@ -72,6 +73,8 @@ ADDED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/
 		ADDED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.USE_FINGERPRINT
 ADDED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml:5:5-74
+MERGED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-74
+MERGED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-74
 MERGED from [:react-native-touch-id] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-touch-id/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-74
 MERGED from [:react-native-touch-id] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-touch-id/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-74
 	android:name
@@ -142,6 +145,8 @@ uses-sdk
 INJECTED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-touch-id] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-touch-id/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-touch-id] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-touch-id/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
@@ -152,10 +157,10 @@ MERGED from [com.facebook.react:react-native:0.60.5] /Users/av-21785/.gradle/cac
 MERGED from [com.facebook.react:react-native:0.60.5] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/b2cf402a219ddd2d9d55c519eba34785/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/5ccaff79c223ca792b58fcb2781a257a/AndroidManifest.xml:7:5-9:41
 MERGED from [org.webkit:android-jsc:r245459] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/5ccaff79c223ca792b58fcb2781a257a/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.transition:transition:1.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/f5ba31f2b41d4b2f11408513d9b142e9/AndroidManifest.xml:20:5-44
-MERGED from [androidx.transition:transition:1.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/f5ba31f2b41d4b2f11408513d9b142e9/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/b30fa0bdc79112764d0f53737cf137b6/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/b30fa0bdc79112764d0f53737cf137b6/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/f5ba31f2b41d4b2f11408513d9b142e9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/f5ba31f2b41d4b2f11408513d9b142e9/AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/36b3243dae87ee92251d0d56cffc6dee/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/36b3243dae87ee92251d0d56cffc6dee/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/av-21785/.gradle/caches/transforms-2/files-2.1/88ffaae1ade52519735762528449f963/AndroidManifest.xml:5:5-7:41
@@ -236,3 +241,9 @@ uses-permission#android.permission.SYSTEM_ALERT_WINDOW
 ADDED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/debug/AndroidManifest.xml:5:5-77
 	android:name
 		ADDED from /Users/av-21785/Desktop/biometrics-react-native/android/app/src/debug/AndroidManifest.xml:5:22-75
+uses-feature#android.hardware.fingerprint
+ADDED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from [:react-native-biometrics] /Users/av-21785/Desktop/biometrics-react-native/node_modules/react-native-biometrics/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-52

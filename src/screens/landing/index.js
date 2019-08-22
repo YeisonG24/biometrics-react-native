@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Alert } from 'react-native';
 import TouchID from 'react-native-touch-id';
-import { MainWrapper, WrapperSection, WrapperButton, TextTitle, ButtonCustom, TextButton } from './style';
+import Biometrics from 'react-native-biometrics';
+import Fingerprint from '../../components/fingerprint';
+import { MainWrapper } from './style';
 
 const optionalConfig = {
   title: 'Autenticación Requerida',
@@ -10,19 +12,42 @@ const optionalConfig = {
   sensorDescription: 'Toque el sensor',
   sensorErrorDescription: 'Huella no reconocida',
   cancelText: 'Cancelar',
-  fallbackLabel: 'Mostrar código de accesso',
+  fallbackLabel: 'Show Passcode',
   unifiedErrors: false,
   passcodeFallback: false,
 };
 
 export default class Landing extends Component {
   static navigationOptions = {
-    title: 'Biometrics',
+    title: 'BIOMETRIA',
+    headerStyle: {
+      backgroundColor: '#606060',
+    },
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      color: '#f2f2f2',
+      fontStyle: 'italic',
+      marginLeft: '35%',
+      marginRight: '35%'
+    }
   };
 
   constructor(props) {
     super(props);
     this.state = {};
+  }
+
+  componentDidMount() {
+    Biometrics.isSensorAvailable()
+      .then((biometryType) => {
+        if (biometryType === Biometrics.TouchID) {
+          Alert.alert('Información', 'Validación por huella disponible.')
+        } else if (biometryType === Biometrics.FaceID) {
+          Alert.alert('Información','Validación reconocimiento facial disponible.')
+        } else {
+          Alert.alert('Información','Ningun elemento biometrico esta disponible.')
+        }
+      })
   }
 
   onPressHandler = async () => {
@@ -35,16 +60,29 @@ export default class Landing extends Component {
       });
   };
 
+  onPressTouchId = () => {
+    Biometrics.createKeys('Confirme huella dactilar')
+      .then((publicKey) => {
+        console.log(publicKey);
+        sendPublicKeyToServer(publicKey)
+      });
+  };
+
   render() {
     return (
       <MainWrapper>
-        <TextTitle>Touch Id</TextTitle>
-        <WrapperSection>
-          <WrapperButton onPress={this.onPressHandler}>
-            <ButtonCustom source={require('../../../assets/img_huella.png')} />
-          </WrapperButton>
-          <TextButton>Toque la huella</TextButton>
-        </WrapperSection>
+        <Fingerprint
+          title="Touch ID"
+          textButton="Toque la huella"
+          onPress={this.onPressHandler}
+          description="Al precionar la huella se hara uso de la librearia de react-native-touch-id."
+        />
+        <Fingerprint
+          title="Touch ID"
+          textButton="Toque la huella"
+          onPress={this.onPressTouchId}
+          description="Al precionar la huella se hara uso de la librearia de react-native-biometrics."
+        />
       </MainWrapper>
     );
   }

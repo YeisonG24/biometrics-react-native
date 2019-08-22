@@ -11,6 +11,7 @@
     "git-cz": "^3.2.1",
     "react": "16.8.6",
     "react-native": "0.60.5",
+    "react-native-biometrics": "^1.6.1",
     "react-native-gesture-handler": "^1.4.0",
     "react-native-reanimated": "^1.2.0",
     "react-native-touch-id": "^4.4.1",
