@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 export const MainWrapper = styled.ImageBackground`
   width: 100%;
-  height: 350px;
+  height: 650px;
+  align-items: center;
+`;
+
+export const WrapperCamera = styled.ImageBackground`
+  width: 100%;
+  height: auto;
   align-items: center;
 `;
 
@@ -15,6 +21,21 @@ export const MainWrapperIcon = styled.TouchableOpacity`
 `;
 
 export const WrapperImage = styled.Image`
+  width: 100%;
+  height: 100%;
+  border-radius: 90px;
+  resize-mode: cover;
+`;
+
+export const WrapperIconCamera = styled.TouchableOpacity`
+  width: 70px;
+  height: 70px;
+  border-radius: 90px;
+  background-color: #f2f2f2;
+  align-items: center;
+`;
+
+export const WrapperImageCamera = styled.Image`
   width: 100%;
   height: 100%;
   border-radius: 90px;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Alert } from 'react-native';
 import TouchID from 'react-native-touch-id';
 import Biometrics from 'react-native-biometrics';
-import ImagePicker from 'react-native-image-picker';
 import Fingerprint from '../../components/fingerprint';
 import FaceRecognition from '../../components/face-recognition';
 import { MainWrapper } from './style';
@@ -39,9 +38,12 @@ export default class Landing extends Component {
 
   constructor(props) {
     super(props);
+    this.camera = React.createRef();
     this.state = {
       filePath: null,
+      visibility: false,
     };
+    this.takePicture = this.takePicture.bind(this);
   }
 
   componentDidMount() {
@@ -75,29 +77,22 @@ export default class Landing extends Component {
       });
   };
 
-  chooseFile = () => {
-    var options = {
-      noData: true,
-    };
-    ImagePicker.launchCamera(options, response => {
-      console.log('Response = ', response);
-      if (response.didCancel) {
-        console.log('User cancelled image picker');
-      } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
-      } else if (response.customButton) {
-        console.log('User tapped custom button: ', response.customButton);
-      } else {
-        let source = response;
-        this.setState({
-          filePath: source,
-        });
-      }
-    });
+  takePicture = async() => {
+    if (this.camera) {
+      const options = { quality: 0.5, base64: true };
+      console.log('REF', this.camera);
+      const data = await this.camera.takePictureAsync(options);
+      console.log('RESPUESTA', data.uri);
+    }
   };
 
+  showCamera = () => {
+    const { visibility } = this.state;
+    this.setState({ visibility: !visibility })
+  }
+
   render() {
-    const { filePath } = this.state;
+    const { visibility } = this.state;
     return (
       <MainWrapper>
         <Fingerprint
@@ -113,10 +108,12 @@ export default class Landing extends Component {
           description="Al precionar la huella se hara uso de la librearia de react-native-biometrics."
         />
         <FaceRecognition
+          ref={this.camera}
           title="Face Recognition"
-          onPress={this.chooseFile}
-          image={filePath}
-          description="Al precionar el icono se desplegara la función de la camara que brinda react-native-image-picker"
+          onPress={this.takePicture}
+          description="Al precionar el icono se desplegara la función de la camara que brinda react-native-camera para el reconocimiento."
+          showCamera={this.showCamera}
+          visible={visibility}
         />
       </MainWrapper>
     );
