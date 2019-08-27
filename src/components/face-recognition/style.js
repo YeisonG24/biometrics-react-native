@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const MainWrapper = styled.ImageBackground`
+export const WrapperComponent = styled.ImageBackground`
   width: 100%;
   height: 650px;
   align-items: center;

@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
-import { Alert } from 'react-native';
+import { Alert, StyleSheet } from 'react-native';
 import TouchID from 'react-native-touch-id';
 import Biometrics from 'react-native-biometrics';
 import Fingerprint from '../../components/fingerprint';
 import FaceRecognition from '../../components/face-recognition';
-import { MainWrapper } from './style';
+import {
+  MainWrapper,
+  WrapperComponent,
+  MainWrapperIcon,
+  TextDefault,
+  TextTitle,
+  WrapperCamera,
+  WrapperDescription,
+  WrapperIconCamera,
+  WrapperImage,
+  WrapperImageCamera,
+  WrapperTitle
+} from './style';
+import { RNCamera } from "react-native-camera";
 
 const optionalConfig = {
   title: 'Autenticación Requerida',
@@ -19,31 +32,16 @@ const optionalConfig = {
 };
 
 export default class Landing extends Component {
-  static navigationOptions = {
-    title: 'BIOMETRICS',
-    headerStyle: {
-      backgroundColor: '#606060',
-    },
-    headerTitleStyle: {
-      fontWeight: 'bold',
-      color: '#f2f2f2',
-      fontStyle: 'italic',
-      marginLeft: '35%',
-      marginRight: '30%'
-    },
-    headerRightContainerStyle: {
-      marginRight: '2%',
-    },
-  };
+  static navigationOptions = { header: null };
 
   constructor(props) {
     super(props);
-    this.camera = React.createRef();
     this.state = {
       filePath: null,
       visibility: false,
+      faceDetected: false,
     };
-    this.takePicture = this.takePicture.bind(this);
+    this.camera = React.createRef();
   }
 
   componentDidMount() {
@@ -77,22 +75,31 @@ export default class Landing extends Component {
       });
   };
 
-  takePicture = async() => {
+  takePicture = async () => {
     if (this.camera) {
-      const options = { quality: 0.5, base64: true };
-      console.log('REF', this.camera);
+      const options = { quality: 0.5, base64: true, fixOrientation: true };
       const data = await this.camera.takePictureAsync(options);
-      console.log('RESPUESTA', data.uri);
+      this.setState({ visibility: false, filePath: data.uri });
+      console.log('RESPUESTA', data);
     }
   };
 
   showCamera = () => {
     const { visibility } = this.state;
     this.setState({ visibility: !visibility })
-  }
+  };
+
+  handleFaceDetected = () => {
+    this.setState({ faceDetected: true });
+  };
+
+  handleErrorFaceDetected = () => {
+    this.setState({ faceDetected: 'error' });
+  };
 
   render() {
-    const { visibility } = this.state;
+    const { visibility, faceDetected, filePath } = this.state;
+    console.log('CARA DETECTADA', faceDetected);
     return (
       <MainWrapper>
         <Fingerprint
@@ -108,14 +115,35 @@ export default class Landing extends Component {
           description="Al precionar la huella se hara uso de la librearia de react-native-biometrics."
         />
         <FaceRecognition
-          ref={this.camera}
           title="Face Recognition"
-          onPress={this.takePicture}
           description="Al precionar el icono se desplegara la función de la camara que brinda react-native-camera para el reconocimiento."
-          showCamera={this.showCamera}
-          visible={visibility}
         />
       </MainWrapper>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: 'black',
+  },
+  preview: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    width: '100%',
+    height: 'auto',
+  },
+  capture: {
+    flex: 0,
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding: 15,
+    paddingHorizontal: 20,
+    alignSelf: 'center',
+    margin: 20,
+  },
+});
+
